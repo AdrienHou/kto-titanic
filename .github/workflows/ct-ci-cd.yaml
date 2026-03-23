@@ -38,7 +38,13 @@ jobs:
           python-version: 3.13
       - name: Install dependencies
         run: |
-          echo "To implement"
+          python -m pip install --upgrade pip
+          pip install uv
+          uv sync --group training --group dev
+          
+      - name: Launch unit tests
+        run: |
+          uv run pytest tests/ci tests/training
           
           # TODO: Saisir la suite de cette pipeline. Devrait apparaître : 
           # Install depencies, Launch unit tests, Resync only training group,
