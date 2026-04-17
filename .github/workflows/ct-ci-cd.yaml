@@ -44,7 +44,7 @@ jobs:
           
       - name: Launch unit tests
         run: |
-          uv run pytest tests/ci tests/training
+          uv run pytest tests/ci tests/training tests/api
       - name: Resync only training
         run: |
           uv sync --group training 
