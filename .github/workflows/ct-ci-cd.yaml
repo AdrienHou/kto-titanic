@@ -20,8 +20,8 @@ on:
 
 env:
   EXPERIMENT_NAME: kto-titanic
-  EXPERIMENT_IMAGE_NAME: quay.io/kto_gthomas/titanic/experiment
-  API_IMAGE_NAME: quay.io/kto_gthomas/titanic/api
+  EXPERIMENT_IMAGE_NAME: quay.io/adrienhssy/titanic/experiment
+  API_IMAGE_NAME: quay.io/adrienhssy/titanic/api
   API_ROUTE_NAME: titanic-api
   DAILYCLEAN_ROUTE_NAME: dailyclean
   MINIO_API_ROUTE_NAME: minio-api
