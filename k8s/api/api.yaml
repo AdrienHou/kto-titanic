@@ -16,6 +16,9 @@ spec:
         - name: titanic-api
           image: quay.io/adrienhssy/titanic/api:latest
           env:
+            env:
+            - name: JAEGER_ENDPOINT
+              value: "http://jaeger.adrienhssy-dev.svc.cluster.local:4318/v1/traces"
             - name: OAUTH2_DOMAIN
               value: "PLACEHOLDER_OAUTH2_DOMAIN"
             - name: OAUTH2_JWT_AUDIENCE
