@@ -31,7 +31,7 @@ async def predict_survival(pclass: int, sex: str, sibsp: int, parch: int) -> str
 
     """
     # TODO : Implémenter l'appel http sécurisé avec oAuth2 vers l'API titanic
-        try:
+    try:
         payload = {"pclass": pclass, "sex": sex, "sibSp": sibsp, "parch": parch}
         headers: dict[str, str] = {"Content-Type": "application/json"}
 
