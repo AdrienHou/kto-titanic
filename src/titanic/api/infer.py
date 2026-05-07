@@ -21,7 +21,7 @@ from opentelemetry.sdk.resources import Resource
 from titanic.api.auth import verify_token
 
 
-JAEGER_ENDPOINT = os.getenv("JAEGER_ENDPOINT", "http://jaeger.kto-gthomas-dev.svc.cluster.local:4318/v1/traces")
+JAEGER_ENDPOINT = os.getenv("JAEGER_ENDPOINT", "http://jaeger.adrienhssy-dev.svc.cluster.local:4318/v1/traces")
 
 resource = Resource(attributes={"service.name": "titanic-inference-api"})
 
