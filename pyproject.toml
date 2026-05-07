@@ -1,50 +1,34 @@
-[project]
-name = "kto-titanic"
-version = "0.1.0"
-description = "Kto Titanic Project"
-readme = "README.md"
-requires-python = ">=3.13"
-dependencies = [
-    "fire>=0.7.1",
-    # TODO : Ajouter les dépendances transverses manquantes
-    "pandas==2.3.3",
-    "scikit-learn==1.8.0",
-]
-
-[project.scripts]
-hello = "titanic.main:main"
-api = "titanic.api.main:main"
-chatbot = "titanic.chatbot.app:main"
-
-[build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [dependency-groups]
-api = [
-    "fastapi>=0.119.0",
+otel = [
     "opentelemetry-api>=1.39.0",
     "opentelemetry-sdk>=1.39.0",
     "opentelemetry-exporter-otlp>=1.39.0",
+]
+api = [
+    {include-group = "otel"},
+    "fastapi>=0.119.0",
     "opentelemetry-instrumentation-fastapi>=0.60b0",
     "uvicorn>=0.37.0",
     "pyjwt[crypto]>=2.8.0",
 ]
 training = [
     "mlflow[extras]==3.8.1",
-    "setuptools==80.9.0", # for ydata-profiling dependency, bug with python 3.13
-    # TODO : Ajouter les dépendances manquantes pour l'entrainement
+    "setuptools>=80.9.0", # for ydata-profiling dependency, bug with python 3.13
     "ydata-profiling==4.18.0",
 ]
 chatbot = [
+    {include-group = "otel"},
     "streamlit>=1.40.0",
     "langchain>=0.3.0",
     "langchain-community>=0.3.0",
     "langchain-openai>=0.2.0",
     "langchain-mcp-adapters>=0.2.1",
+    "fastmcp>=0.4.0",
     "httpx>=0.28.0",
+    "traceloop-sdk>=0.39.0",
 ]
 mcp-server = [
+    {include-group = "otel"},
     "uvicorn>=0.37.0",
     "fastmcp>=0.4.0",
     "httpx>=0.28.0",
