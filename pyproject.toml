@@ -1,3 +1,25 @@
+[project]
+name = "kto-titanic"
+version = "0.1.0"
+description = "Kto Titanic Project"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fire>=0.7.1",
+    # TODO : Ajouter les dépendances transverses manquantes
+    "pandas==2.3.3",
+    "scikit-learn==1.8.0",
+]
+
+[project.scripts]
+hello = "titanic.main:main"
+api = "titanic.api.main:main"
+chatbot = "titanic.chatbot.app:main"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [dependency-groups]
 otel = [
     "opentelemetry-api>=1.39.0",
