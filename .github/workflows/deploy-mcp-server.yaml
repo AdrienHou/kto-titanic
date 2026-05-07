@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 env:
-  MCP_SERVER_IMAGE_NAME: quay.io/{{ cookiecutter.quay_username }}/titanic/mcp-server
+  MCP_SERVER_IMAGE_NAME: quay.io/adrienhssy/titanic/mcp-server
   MCP_SERVER_DEPLOYMENT_NAME: titanic-mcp-server
   MCP_SERVER_SECRET_NAME: mcp-oauth2-credentials
 
