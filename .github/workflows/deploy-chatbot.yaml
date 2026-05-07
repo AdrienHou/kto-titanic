@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 env:
-  CHATBOT_IMAGE_NAME: quay.io/{{ cookiecutter.quay_username }}/titanic/chatbot
+  CHATBOT_IMAGE_NAME: quay.io/adrienhssy/titanic/chatbot
   CHATBOT_DEPLOYMENT_NAME: titanic-chatbot
   CHATBOT_SECRET_NAME: chatbot-secrets
   CHATBOT_ROUTE_NAME: titanic-chatbot
@@ -25,10 +25,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Python {{ cookiecutter.__python_version }}
+      - name: Set up Python 3.13
         uses: actions/setup-python@v3
         with:
-          python-version: {{ cookiecutter.__python_version }}
+          python-version: 3.13
 
       - name: Install dependencies
         run: |
