@@ -8,7 +8,7 @@ on:
       - 'src/titanic/mcp_server/**'
       - '/tests/mcp_server/**'
       - 'k8s/mcp_server/**'
-      - '.github/workflows/deploy-mcp-server.yml'
+      - '.github/workflows/deploy-mcp-server.yaml'
   workflow_dispatch:
 
 env:
